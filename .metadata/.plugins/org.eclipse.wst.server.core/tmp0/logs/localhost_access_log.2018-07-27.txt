@@ -1,0 +1,16 @@
+127.0.0.1 - - [27/Jul/2018:11:13:40 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:11:13:43 +0900] "GET /WebProj/ HTTP/1.1" 200 891
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:11:13:47 +0900] "GET /WebProj/HelloStrutsAction HTTP/1.1" 200 276
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:11:13:51 +0900] "GET /WebProj/WelcomeAction HTTP/1.1" 200 972
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:11:13:58 +0900] "POST /WebProj/LoginAction.action HTTP/1.1" 200 284
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:11:14:02 +0900] "POST /WebProj/InquiryAction.action;jsessionid=728FB1D19D02E600320B6E768925AA1E HTTP/1.1" 200 1072
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:11:14:25 +0900] "POST /WebProj/InquiryCompleteAction.action HTTP/1.1" 200 521
+127.0.0.1 - - [27/Jul/2018:11:38:12 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:11:38:15 +0900] "GET /WebProj/ HTTP/1.1" 200 1903
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:11:38:30 +0900] "GET /WebProj/TestAction.action?username=kamata&password=aaaaa HTTP/1.1" 200 274
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:11:38:44 +0900] "POST /WebProj/TestAction.action HTTP/1.1" 200 274
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:11:38:54 +0900] "GET /WebProj/TestAction.action?username=kamata&password=aaaaa HTTP/1.1" 200 274
+127.0.0.1 - - [27/Jul/2018:17:49:45 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:17:49:48 +0900] "GET /WebProj2/ HTTP/1.1" 200 593
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:17:49:51 +0900] "POST /WebProj2/HelloStrutsAction.action;jsessionid=6AB2DC3E1D282295F7EA8092ABC7C771 HTTP/1.1" 200 324
+0:0:0:0:0:0:0:1 - - [27/Jul/2018:17:50:03 +0900] "POST /WebProj2/HelloStrutsAction.action;jsessionid=6AB2DC3E1D282295F7EA8092ABC7C771 HTTP/1.1" 200 324
