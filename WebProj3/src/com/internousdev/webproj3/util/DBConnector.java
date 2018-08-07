@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 /**
  * @author internousdev
@@ -19,7 +19,7 @@ public class DBConnector {
 	/**
 	 * データベース接続URL
 	 */
-	private static String url="jdbc:mysql://localhost/testdb";
+	private static String url="jdbc:mysql://localhost/kamatadb";
 	/**
 	 * データベース接続ユーザー名
 	 */

@@ -1,6 +1,6 @@
-drop database if exists testdb;
-create database testdb;
-use testdb;
+drop database if exists kamatadb;
+create database kamatadb;
+use kamatadb;
 
 create table users(
 user_id int primary key auto_increment,

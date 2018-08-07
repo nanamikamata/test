@@ -2,4 +2,9 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="javax.sound.midi.Synthesizer"/>
+<fullyQualifiedTypeName name="com.opensymphony.xwork2.Action"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.internousdev.template.dto.BuyItemDTO"/>
+<fullyQualifiedTypeName name="org.apache.struts2.interceptor.SessionAware"/>
+<fullyQualifiedTypeName name="java.sql.SQLInvalidAuthorizationSpecException"/>
 </qualifiedTypeNameHistroy>
