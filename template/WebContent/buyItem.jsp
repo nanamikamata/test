@@ -105,7 +105,7 @@ table {
 	<div id="footer">
 		<div id="pr"></div>
 	</div>
-</head>
+
 <body>
 
 </body>

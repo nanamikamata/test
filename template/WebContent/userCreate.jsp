@@ -62,7 +62,6 @@
 		</div>
 	</div>
 	<div id="main">
-		<div id="main">
 			<div id="top">
 				<p>UserCreate</p>
 			</div>
@@ -106,7 +105,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+
 
 </body>
 </html>
