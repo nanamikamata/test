@@ -70,9 +70,17 @@
 			<p>Home</p>
 		</div>
 		<div id="text-center">
-			<s:form action="HomeAction">
+
+
+		<s:form action="HomeAction">
 				<s:submit value="商品購入"/>
-			</s:form>
+		</s:form>
+
+		<div id="text-link">
+				<p>管理者画面は
+					<a href='<s:url action="ManagementPageAction"/>'>こちら</a></p>
+		</div>
+
 			<s:if test="#session.id !=null">
 				<p>ログアウトする場合は
 					<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
