@@ -90,12 +90,17 @@
 				</tr>
 
 				<tr>
-						<td><input type="button" value="ユーザー"
+						<td><input type="button" value="ユーザー一覧"
 							onclick="submitAction('UserListAction')"/></td>
 				</tr>
 
 			</table>
 			</s:form>
+
+			<div>
+				<span>前画面に戻る場合は</span>
+				<a href='<s:url action="GoHomeAction"/>'>こちら</a>
+			</div>
 
 		</div>
 	</div>
