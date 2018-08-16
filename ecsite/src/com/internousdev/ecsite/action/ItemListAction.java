@@ -14,7 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ItemListAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
 	private ItemListDAO itemListDAO=new ItemListDAO();
-	private ArrayList<ItemListDTO> itemList=new ArrayList<ItemListDTO>();
+	private ArrayList<ItemListDTO> itemListInfoDTO=new ArrayList<ItemListDTO>();
 	private String deleteFlg;
 	private String message;
 
@@ -23,7 +23,7 @@ public class ItemListAction extends ActionSupport implements SessionAware{
 		//商品履歴を削除しない場合
 		if(deleteFlg == null){
 
-			itemList=itemListDAO.getItemListInfo();
+			itemListInfoDTO=itemListDAO.getItemListInfo();
 
 		//商品履歴を削除する場合
 		}else if(deleteFlg.equals("1")){
@@ -39,7 +39,7 @@ public class ItemListAction extends ActionSupport implements SessionAware{
 		int res=itemListDAO.itemHistoryDelete();
 
 		if(res>0){
-			itemList=null;
+			itemListInfoDTO=null;
 			setMessage("商品情報を正しく削除しました。");
 		}else if(res==0){
 			setMessage("商品情報の削除に失敗しました。");
@@ -63,12 +63,12 @@ public class ItemListAction extends ActionSupport implements SessionAware{
 		this.session=session;
 	}
 
-	public ArrayList<ItemListDTO> getItemList(){
-		return this.itemList;
+	public ArrayList<ItemListDTO> getItemListInfoDTO(){
+		return this.itemListInfoDTO;
 	}
 
-	public void setItemList(ArrayList<ItemListDTO> itemList){
-		this.itemList=itemList;
+	public void setItemListInfoDTO(ArrayList<ItemListDTO> itemList){
+		this.itemListInfoDTO=itemList;
 	}
 
 	public String getMessage(){

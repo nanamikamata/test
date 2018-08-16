@@ -71,8 +71,7 @@
 		<div id="top">
 			<p>ItemList</p>
 		</div>
-		<div>
-		<s:if test="itemList == null">
+		<s:if test="itemListInfoDTO == null">
 			<h3>商品情報はありません。</h3>
 		</s:if>
 		<s:elseif test="message == null">
@@ -81,18 +80,20 @@
 			<tr>
 				<th>商品名</th>
 				<th>値段</th>
-				<th>在庫</th>
+				<th>在庫数</th>
 				<th>仕入れ日</th>
+				<th>詳細</th>
 			</tr>
-			<s:iterator value="itemList">
+			<s:iterator value="itemListInfoDTO">
 				<tr>
 					<td><s:property value="itemName"/></td>
 					<td><s:property value="itemPrice"/><span>円</span></td>
 					<td><s:property value="itemStock"/><span>個</span></td>
 					<td><s:property value="insert_date"/></td>
+					<td><s:submit value="詳細" method="itemListDTO"/></td>
 				</tr>
 			</s:iterator>
-			</table>
+  			</table>
 			<s:form action="ItemListAction">
 				<input type="hidden" name="deleteFlg" value="1">
 				<s:submit value="削除" method="delete"/>
@@ -106,7 +107,7 @@
 				<p>管理者画面へ戻る場合は<a href='<s:url action="ManagementPageAction"/>'>こちら</a></p>
 				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 			</div>
-		</div>
+
 	</div>
 	<div id="footer">
 		<div id="pr">

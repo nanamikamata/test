@@ -13,7 +13,7 @@ public class ItemAddCompleteDAO {
 	private Connection connection=dbConnector.getConnection();
 	private DateUtil dateUtil=new DateUtil();
 
-	private String sql="INSERT INTO item_add_transaction(item_name,item_price,item_stock,insert_date) VALUE(?,?,?,?)";
+	private String sql="INSERT INTO item_info_transaction(item_name,item_price,item_stock,insert_date) VALUE(?,?,?,?)";
 
 	public void createItemAdd(String itemName,String itemPrice,String itemStock) throws
 SQLException{

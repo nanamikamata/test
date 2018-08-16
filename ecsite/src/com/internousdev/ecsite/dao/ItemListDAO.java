@@ -16,13 +16,12 @@ public class ItemListDAO {
 	public ArrayList<ItemListDTO> getItemListInfo()
 			throws SQLException{
 
-					ArrayList<ItemListDTO> itemListDTO=new ArrayList<ItemListDTO>();
+					ArrayList<ItemListDTO> itemListInfoDTO=new ArrayList<ItemListDTO>();
 					String sql="SELECT * FROM item_info_transaction";
 
 					try{
 						PreparedStatement preparedStatement=connection.prepareStatement(sql);
 						ResultSet resultSet=preparedStatement.executeQuery();
-
 						while(resultSet.next()){
 							ItemListDTO dto=new ItemListDTO();
 							dto.setId(resultSet.getString("id"));
@@ -31,7 +30,7 @@ public class ItemListDAO {
 							dto.setItemStock(resultSet.getString("item_stock"));
 							dto.setInsert_date(resultSet.getString("insert_date"));
 							dto.setUpdate_date(resultSet.getString("update_date"));
-							itemListDTO.add(dto);
+							itemListInfoDTO.add(dto);
 						}
 
 					}catch(Exception e){
@@ -39,7 +38,7 @@ public class ItemListDAO {
 					}finally{
 						connection.close();
 					}
-					return itemListDTO;
+					return itemListInfoDTO;
 				}
 
 				public int itemHistoryDelete()
