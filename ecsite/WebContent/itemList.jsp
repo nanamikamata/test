@@ -90,7 +90,8 @@
 					<td><s:property value="itemPrice"/><span>円</span></td>
 					<td><s:property value="itemStock"/><span>個</span></td>
 					<td><s:property value="insert_date"/></td>
-					<td><s:submit value="詳細" method="itemListDTO"/></td>
+					<td><a href='<s:url action="ItemDetailsAction">
+				<s:param name="Id" value="%{Id}"/></s:url>'>詳細</a></td>
 				</tr>
 			</s:iterator>
   			</table>

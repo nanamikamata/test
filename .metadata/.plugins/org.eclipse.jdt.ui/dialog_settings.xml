@@ -5,13 +5,12 @@
 	<item value="C:\Users\internousdev\Desktop" key="org.eclipse.jdt.ui.lastextjar"/>
 	<item value="3" key="CallHierarchyViewPart.orientation"/>
 	<item value="500" key="CallHierarchyViewPart.ratio0"/>
+	<item value="filter_imports;" key="filters_last_used"/>
 	<item value="500" key="CallHierarchyViewPart.ratio1"/>
 	<item value="1" key="SearchScopeActionGroup.search_scope_type"/>
 	<item value="500" key="CallHierarchyViewPart.ratio3"/>
 	<list key="SearchScopeActionGroup.working_set">
 	</list>
-	<section name="CallHierarchySearchScope">
-	</section>
 	<section name="SearchInDialog">
 		<item value="true" key="SearchInProjects"/>
 		<item value="true" key="SearchInAppLibs"/>
@@ -25,13 +24,6 @@
 		<item value="1" key="rootMode"/>
 		<item value="false" key="linkWithEditor"/>
 	</section>
-	<section name="SourceActionDialog.methods">
-		<item value="false" key="SynchronizedModifier"/>
-		<item value="false" key="Comments"/>
-		<item value="2" key="InsertPosition.v2"/>
-		<item value="1" key="VisibilityModifier"/>
-		<item value="false" key="FinalModifier"/>
-	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>
 		<item value="true" key="create_unimplemented"/>
@@ -39,19 +31,45 @@
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
 	</section>
-	<section name="quick_assist_proposal_size">
-	</section>
-	<section name="NewPackageWizardPage">
-		<item value="true" key="create_package_info_java"/>
-	</section>
-	<section name="completion_proposal_size">
-	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
 		<item value="857" key="DIALOG_WIDTH"/>
 		<item value="1|Yu Gothic UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Yu Gothic UI" key="DIALOG_FONT_NAME"/>
 		<item value="1089" key="DIALOG_HEIGHT"/>
 		<item value="735" key="DIALOG_X_ORIGIN"/>
 		<item value="11" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="CallHierarchySearchScope">
+	</section>
+	<section name="SourceActionDialog.methods">
+		<item value="false" key="SynchronizedModifier"/>
+		<item value="false" key="Comments"/>
+		<item value="2" key="InsertPosition.v2"/>
+		<item value="1" key="VisibilityModifier"/>
+		<item value="false" key="FinalModifier"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="NewPackageWizardPage">
+		<item value="true" key="create_package_info_java"/>
+	</section>
+	<section name="JavaSearchPage">
+		<item value="1" key="HISTORY_SIZE"/>
+		<item value="false" key="CASE_SENSITIVE"/>
+		<item value="11" key="INCLUDE_MASK"/>
+		<section name="HISTORY0">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="11" key="includeMask"/>
+			<item value="getProductInfo" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+	</section>
+	<section name="completion_proposal_size">
 	</section>
 	<section name="AddGetterSetterDialog">
 		<item value="false" key="SortOrdering"/>

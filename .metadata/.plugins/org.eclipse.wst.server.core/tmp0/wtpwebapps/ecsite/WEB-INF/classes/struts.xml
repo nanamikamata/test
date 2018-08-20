@@ -28,6 +28,13 @@
 			<result name="error">login.jsp</result>
 		</action>
 
+		<!-- ManagementLoginAction -->
+		<action name="ManagementLoginAction" class="com.internousdev.ecsite.action.ManagementLoginAction"
+		method="execute">
+			<result name="success">managementPage.jsp</result>
+			<result name="error">managementLogin.jsp</result>
+		</action>
+
 		<!-- ManagementPageAction -->
 		<action name="ManagementPageAction" class="com.internousdev.ecsite.action.ManagementPageAction"
 		method="execute">
@@ -57,6 +64,12 @@
 		<action name="ItemListAction"
 		class="com.internousdev.ecsite.action.ItemListAction" method="execute">
 			<result name="success">itemList.jsp</result>
+		</action>
+
+		<!-- ItemDetailsAction -->
+		<action name="ItemDetailsAction"
+		class="com.internousdev.ecsite.action.ItemDetailsAction" method="execute">
+			<result name="success">itemDetails.jsp</result>
 		</action>
 
 		<!-- UserCreateAction -->

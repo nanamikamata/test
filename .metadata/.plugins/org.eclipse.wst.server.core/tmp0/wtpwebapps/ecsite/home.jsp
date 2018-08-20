@@ -78,7 +78,7 @@
 
 		<div id="text-link">
 				<p>管理者画面は
-					<a href='<s:url action="ManagementPageAction"/>'>こちら</a></p>
+					<a href='<s:url action="ManagementLoginAction"/>'>こちら</a></p>
 		</div>
 
 			<s:if test="#session.id !=null">

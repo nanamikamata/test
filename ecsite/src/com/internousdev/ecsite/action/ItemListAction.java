@@ -19,7 +19,6 @@ public class ItemListAction extends ActionSupport implements SessionAware{
 	private String message;
 
 	public String execute() throws SQLException{
-
 		//商品履歴を削除しない場合
 		if(deleteFlg == null){
 
