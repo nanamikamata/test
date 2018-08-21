@@ -72,7 +72,6 @@
 			<p>ItemList</p>
 		</div>
 		<s:if test="itemListInfoDTO == null">
-			<h3>商品情報はありません。</h3>
 		</s:if>
 		<s:elseif test="message == null">
 			<h3>商品一覧</h3>
@@ -91,13 +90,13 @@
 					<td><s:property value="itemStock"/><span>個</span></td>
 					<td><s:property value="insert_date"/></td>
 					<td><a href='<s:url action="ItemDetailsAction">
-				<s:param name="Id" value="%{Id}"/></s:url>'>詳細</a></td>
+				<s:param name="id" value="%{id}"/></s:url>'>詳細</a></td>
 				</tr>
 			</s:iterator>
   			</table>
 			<s:form action="ItemListAction">
 				<input type="hidden" name="deleteFlg" value="1">
-				<s:submit value="削除" method="delete"/>
+				<s:submit value="全件削除" method="delete"/>
 			</s:form>
 		</s:elseif>
 

@@ -15,14 +15,19 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemDetailsAction extends ActionSupport implements SessionAware{
 	private String id;
+	private ItemListDAO itemListDAO=new ItemListDAO();
 	private ArrayList<ItemListDTO> itemListInfoDTO=new ArrayList<ItemListDTO>();
 	private Map<String, Object> session;
+	private String deleteFlg;
+	private String message;
 
 	public String execute(){
 		String result = ERROR;
 		ItemListDTO itemListDTO=new ItemListDTO();
-		ItemListDAO itemListDAO=new ItemListDAO();
 		try {
+			//商品履歴を削除しない場合
+			if(deleteFlg == null){
+
 			itemListDTO=itemListDAO.getItemListInfo(id);
 			session.put("id", itemListDTO.getId());
 			session.put("itemName", itemListDTO.getItemName());
@@ -40,13 +45,40 @@ public class ItemDetailsAction extends ActionSupport implements SessionAware{
 				result = SUCCESS;
 				return result;
 			}
+
+			//商品履歴を削除する場合
+			}else if(deleteFlg.equals("1")){
+				delete();
+			}
+
 		}catch (SQLException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 		return result;
+		}
 
+		public void delete() throws SQLException{
+			System.out.println(session.get("id"));
+			int res=itemListDAO.itemDetailsHistoryDelete((session.get("id")).toString());
+
+			if(res>0){
+				itemListInfoDTO=null;
+				setMessage("商品情報を正しく削除しました。");
+			}else if(res==0){
+				setMessage("商品情報の削除に失敗しました。");
+			}
+		}
+
+
+	public String getDeleteFlg(){
+		return deleteFlg;
 	}
+
+	public void setDeleteFlg(String deleteFlg){
+		this.deleteFlg=deleteFlg;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -64,6 +96,13 @@ public class ItemDetailsAction extends ActionSupport implements SessionAware{
 	}
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+	public String getMessage(){
+		return this.message;
+	}
+
+	public void setMessage(String message){
+		this.message=message;
 	}
 
 

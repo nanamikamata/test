@@ -18,13 +18,13 @@
 		<action name="HomeAction" class="com.internousdev.ecsite.action.HomeAction"
 		method="execute">
 			<result name="login">login.jsp</result>
-			<result name="success">buyItem.jsp</result>
+			<result name="success">buyItemList.jsp</result>
 		</action>
 
 		<!-- LoginAction -->
 		<action name="LoginAction" class="com.internousdev.ecsite.action.LoginAction"
 		method="execute">
-			<result name="success">buyItem.jsp</result>
+			<result name="success">buyItemList.jsp</result>
 			<result name="error">login.jsp</result>
 		</action>
 
@@ -70,6 +70,7 @@
 		<action name="ItemDetailsAction"
 		class="com.internousdev.ecsite.action.ItemDetailsAction" method="execute">
 			<result name="success">itemDetails.jsp</result>
+			<result name="error">itemList.jsp</result>
 		</action>
 
 		<!-- UserCreateAction -->
@@ -96,6 +97,12 @@
 		<action name="UserListAction"
 		class="com.internousdev.ecsite.action.UserListAction" method="execute">
 			<result name="success">userList.jsp</result>
+		</action>
+
+		<!-- BuyItemListAction -->
+		<action name="BuyItemListAction"
+		class="com.internousdev.ecsite.action.BuyItemListAction" method="execute">
+			<result name="success">buyItemList.jsp</result>
 		</action>
 
 		<!-- BuyItemAction -->

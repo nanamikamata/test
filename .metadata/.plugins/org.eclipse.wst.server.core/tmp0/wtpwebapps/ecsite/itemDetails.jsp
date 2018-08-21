@@ -79,22 +79,27 @@
 		<table border="1">
 		<tr>
 		<th>商品名</th>
-		<td><s:property value="%{session.itemName}"/></td>
+		<td><s:property value="%{#session.itemName}"/></td>
 		</tr>
 		<tr>
 		<th>値段</th>
-		<td><s:property value="%{session.itemPrice}"/>円</td>
+		<td><s:property value="%{#session.itemPrice}"/>円</td>
 		</tr>
 		<tr>
 		<th>購入個数</th>
-		<td><s:property value="%{session.itemStock}"/>個</td>
+		<td><s:property value="%{#session.itemStock}"/>個</td>
 		</tr>
 		<tr>
 		<th>仕入れ日</th>
-		<td><s:property value="%{session.insert_date}"/></td>
+		<td><s:property value="%{#session.insert_date}"/></td>
+		</tr>
+		<tr>
+		<th>ID</th>
+		<td><s:property value="%{#session.id}"/></td>
 		</tr>
 		</table>
 		<s:form action="ItemDetailsAction">
+				<s:param name="id" value="%{#session.id}"/>
 				<input type="hidden" name="deleteFlg" value="1">
 				<s:submit value="削除" method="delete"/>
 			</s:form>
