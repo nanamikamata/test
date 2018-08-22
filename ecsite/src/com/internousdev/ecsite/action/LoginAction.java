@@ -1,5 +1,7 @@
 package com.internousdev.ecsite.action;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -10,6 +12,7 @@ import com.internousdev.ecsite.dto.BuyItemDTO;
 import com.internousdev.ecsite.dto.LoginDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
+//ログイン機能
 public class LoginAction extends ActionSupport implements SessionAware{
 	private String loginUserId;
 	private String loginPassword;
@@ -56,4 +59,38 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		this.session=session;
 	}
 
+	//ログインおわり
+
+	//商品一覧ページBuyItemListAction
+
+	private ArrayList<LoginDTO> buyItemListDTO=new ArrayList<LoginDTO>();
+	private String message;
+
+	public String execute2() throws SQLException{
+
+		buyItemListDTO=loginDAO.getBuyItemList();
+
+		String result=SUCCESS;
+		return result;
+	}
+
+	public ArrayList<LoginDTO> getBuyItemListDTO(){
+		return this.buyItemListDTO;
+	}
+
+	public void setBuyItemListDTO(ArrayList<LoginDTO> buyItemListDTO){
+		this.buyItemListDTO=buyItemListDTO;
+	}
+
+	public String getMessage(){
+		return this.message;
+	}
+
+	public void setMessage(String message){
+		this.message=message;
+	}
+
+
 }
+
+

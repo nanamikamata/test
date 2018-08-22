@@ -99,11 +99,6 @@
 			<result name="success">userList.jsp</result>
 		</action>
 
-		<!-- BuyItemListAction -->
-		<action name="BuyItemListAction"
-		class="com.internousdev.ecsite.action.BuyItemListAction" method="execute">
-			<result name="success">buyItemList.jsp</result>
-		</action>
 
 		<!-- BuyItemAction -->
 		<action name="BuyItemAction"

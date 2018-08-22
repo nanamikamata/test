@@ -69,7 +69,7 @@
 		<div id="top">
 			<p>BuyItemList</p>
 		</div>
-		<s:if test="itemListInfoDTO == null">
+	<s:if test="buyItemListDTO == null">
 		<p>商品がありません。<p>
 		</s:if>
 		<s:elseif test="message == null">
@@ -80,12 +80,12 @@
 				<th>値段</th>
 				<th>詳細</th>
 			</tr>
-			<s:iterator value="itemListInfoDTO">
+			<s:iterator value="buyItemListDTO">
 				<tr>
 					<td><s:property value="itemName"/></td>
 					<td><s:property value="itemPrice"/><span>円</span></td>
 					<td><a href='<s:url action="BuyItemAction">
-				<s:param name="id" value="%{id}"/></s:url>'>詳細</a></td>
+					<s:param name="id" value="%{id}"/></s:url>'>詳細</a></td>
 				</tr>
 			</s:iterator>
   			</table>
