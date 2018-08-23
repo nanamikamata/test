@@ -65,38 +65,55 @@ table {
 		<div id="top">
 			<p>BuyItem</p>
 		</div>
+
 		<div>
-			<s:form action="BuyItemAction">
-				<table>
-					<tr>
-						<td><span>商品名</span></td>
-						<td><s:property value="session.buyItem_name" /><br></td>
-					</tr>
-					<tr>
-						<td><span>値段</span></td>
-						<td><s:property value="session.buyItem_price" /><span>円</span></td>
-					</tr>
-					<tr>
-						<td><span>購入個数</span> </td>
-						<td><select name="count">
-								<option value="1" selected="selected">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-						</select></td>
-					</tr>
-					<tr>
-						<td><span>支払い方法</span></td>
-						<td><input type="radio" name="pay" value="1" checked="checked">現金払い
-							<input type="radio" name="pay" value="2">クレジットカード
-						</td>
-					</tr>
-					<tr>
-						<td><s:submit value="購入" /></td>
-					</tr>
-				</table>
+			<s:if test="itemListInfoDTO == null">
+			<h3>商品詳細はありません。</h3>
+		</s:if>
+		<s:elseif test="message == null">
+			<h3>商品詳細</h3>
+
+		<table>
+		<tr>
+		<th>商品名</th>
+		<td><s:property value="%{#session.buyItem_name}"/></td>
+		</tr>
+		<tr>
+		<th>値段</th>
+		<td><s:property value="%{#session.buyItem_price}"/>円</td>
+		</tr>
+		<tr>
+		<th>購入個数</th>
+		<td><select name="count">
+				<option value="1" selected="selected">1個</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select></td>
+		</tr>
+		<tr>
+		<th>仕入れ日</th>
+		<td><s:property value="%{#session.insert_date}"/></td>
+		</tr>
+		<tr>
+		<th>ID</th>
+		<td><s:property value="%{#session.id}"/></td>
+		</tr>
+		<tr>
+			<td><span>支払い方法</span></td>
+			<td><input type="radio" name="pay" value="1" checked="checked">現金払い
+			<input type="radio" name="pay" value="2">クレジットカード</td>
+		</tr>
+
+		</table>
+		<s:form action="BuyItemAction">
+				<s:param name="id" value="%{#session.id}"/>
+				<input type="hidden" name="" value="1">
+				<s:submit value="購入" method=""/>
 			</s:form>
+		</s:elseif>
+
 				<div>
 					<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 					<p>マイページは<a href='<s:url action="MyPageAction"/>'>こちら</a></p>

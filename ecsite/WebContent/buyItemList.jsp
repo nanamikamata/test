@@ -89,8 +89,8 @@
 				</tr>
 			</s:iterator>
   			</table>
-			<s:form action="BuyItemAction">
-				<input type="hidden" name="" value="1"></s:form>
+			<s:form action="LoginAction">
+				<input type="hidden" name="" value=""></s:form>
 		</s:elseif>
 
 		<s:if test="message!= null">
