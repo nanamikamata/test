@@ -50,31 +50,53 @@ public class LoginDAO {
 //ログイン機能終わり
 
 //BuyItemListDAO
-		public ArrayList<LoginDTO> getBuyItemList()
+	public ArrayList<LoginDTO> getBuyItemList()
+			throws SQLException{
+
+			ArrayList<LoginDTO> buyItemListDTO=new ArrayList<LoginDTO>();
+			String sql="SELECT * FROM item_info_transaction";
+
+			try{
+				PreparedStatement preparedStatement=connection.prepareStatement(sql);
+				ResultSet resultSet=preparedStatement.executeQuery();
+				while(resultSet.next()){
+					LoginDTO dto=new LoginDTO();
+					dto.setId(resultSet.getString("id"));
+					dto.setItemName(resultSet.getString("item_name"));
+					dto.setItemPrice(resultSet.getString("item_price"));
+					buyItemListDTO.add(dto);
+					}
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally{
+				connection.close();
+			}
+			return buyItemListDTO;
+	}
+
+	public LoginDTO getBuyItemList(String Id)
 				throws SQLException{
 
-						ArrayList<LoginDTO> buyItemListDTO=new ArrayList<LoginDTO>();
-						String sql="SELECT * FROM item_info_transaction";
+		LoginDTO dto=new LoginDTO();
+		String sql="SELECT * FROM item_info_transaction where id=?";
 
-						try{
-							PreparedStatement preparedStatement=connection.prepareStatement(sql);
-							ResultSet resultSet=preparedStatement.executeQuery();
-							while(resultSet.next()){
-								LoginDTO dto=new LoginDTO();
-								dto.setId(resultSet.getString("id"));
-								dto.setItemName(resultSet.getString("item_name"));
-								dto.setItemPrice(resultSet.getString("item_price"));
-								dto.setItemStock(resultSet.getString("item_stock"));
-								dto.setInsert_date(resultSet.getString("insert_date"));
-								dto.setUpdate_date(resultSet.getString("update_date"));
-								buyItemListDTO.add(dto);
-							}
-
-						}catch(Exception e){
-							e.printStackTrace();
-						}finally{
-							connection.close();
-						}
-						return buyItemListDTO;
-					}
+	try{
+		PreparedStatement preparedStatement=connection.prepareStatement(sql);
+		preparedStatement.setString(1, Id);
+		ResultSet resultSet=preparedStatement.executeQuery();
+		if(resultSet.next()){
+			dto.setId(resultSet.getString("id"));
+			dto.setItemName(resultSet.getString("item_name"));
+			dto.setItemPrice(resultSet.getString("item_price"));
+			dto.setItemStock(resultSet.getString("item_stock"));
+			dto.setInsert_date(resultSet.getString("insert_date"));
+			dto.setUpdate_date(resultSet.getString("update_date"));
+		}
+	}catch(Exception e){
+		e.printStackTrace();
+	}finally{
+		connection.close();
+	}
+	return dto;
+	}
 }

@@ -134,3 +134,10 @@
 127.0.0.1 - - [23/Aug/2018:17:47:08 +0900] "GET / HTTP/1.1" 404 1019
 0:0:0:0:0:0:0:1 - - [23/Aug/2018:17:47:09 +0900] "GET /ecsite/WEB-INF/classes/com/internousdev/ecsite/action/LoginAction.java HTTP/1.1" 404 1017
 0:0:0:0:0:0:0:1 - - [23/Aug/2018:17:50:12 +0900] "POST /ecsite/LoginAction.action HTTP/1.1" 200 1896
+127.0.0.1 - - [23/Aug/2018:17:51:31 +0900] "GET / HTTP/1.1" 404 1019
+127.0.0.1 - - [23/Aug/2018:17:51:33 +0900] "GET /ecsite/ HTTP/1.1" 200 1747
+127.0.0.1 - - [23/Aug/2018:17:51:35 +0900] "POST /ecsite/HomeAction.action HTTP/1.1" 200 2220
+127.0.0.1 - - [23/Aug/2018:17:51:41 +0900] "POST /ecsite/LoginAction.action HTTP/1.1" 200 1896
+127.0.0.1 - - [23/Aug/2018:17:52:31 +0900] "POST /ecsite/LoginAction.action HTTP/1.1" 200 1896
+127.0.0.1 - - [23/Aug/2018:17:52:50 +0900] "POST /ecsite/LoginAction.action HTTP/1.1" 200 2217
+127.0.0.1 - - [23/Aug/2018:17:52:58 +0900] "GET /ecsite/BuyItemAction.action?id=13 HTTP/1.1" 200 9346

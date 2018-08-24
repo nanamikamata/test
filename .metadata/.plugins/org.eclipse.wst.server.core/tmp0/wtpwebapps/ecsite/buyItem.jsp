@@ -67,20 +67,21 @@ table {
 		</div>
 
 		<div>
-			<s:if test="itemListInfoDTO == null">
+
+			<s:if test="buyItemListDTO == null">
 			<h3>商品詳細はありません。</h3>
 		</s:if>
 		<s:elseif test="message == null">
 			<h3>商品詳細</h3>
-
+		<s:form action="BuyItemConfirmAction">
 		<table>
 		<tr>
 		<th>商品名</th>
-		<td><s:property value="%{#session.buyItem_name}"/></td>
+		<td><s:property value="%{#session.itemName}"/></td>
 		</tr>
 		<tr>
 		<th>値段</th>
-		<td><s:property value="%{#session.buyItem_price}"/>円</td>
+		<td><s:property value="%{#session.itemPrice}"/>円</td>
 		</tr>
 		<tr>
 		<th>購入個数</th>
@@ -105,12 +106,16 @@ table {
 			<td><input type="radio" name="pay" value="1" checked="checked">現金払い
 			<input type="radio" name="pay" value="2">クレジットカード</td>
 		</tr>
-
-		</table>
-		<s:form action="BuyItemAction">
-				<s:param name="id" value="%{#session.id}"/>
+		<tr>
+			<td><s:param name="id" value="%{#session.id}"/>
 				<input type="hidden" name="" value="1">
 				<s:submit value="購入" method=""/>
+			</td>
+		</tr>
+
+		</table>
+
+
 			</s:form>
 		</s:elseif>
 

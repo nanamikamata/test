@@ -26,7 +26,7 @@ public class UserListDAO {
 
 						while(resultSet.next()){
 							UserListDTO dto=new UserListDTO();
-							dto.setId(resultSet.getString("id"));
+							dto.setId(resultSet.getString("user_id"));
 							dto.setLoginId(resultSet.getString("login_id"));
 							dto.setLoginPass(resultSet.getString("login_pass"));
 							dto.setUserName(resultSet.getString("user_name"));

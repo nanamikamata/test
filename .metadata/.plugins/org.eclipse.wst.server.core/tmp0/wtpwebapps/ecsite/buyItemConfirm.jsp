@@ -82,12 +82,12 @@
 			<table>
 				<tr>
 					<td>商品名</td>
-					<td><s:property value="session.buyItem_name"/></td>
+					<td><s:property value="session.itemName"/></td>
 				</tr>
 				<tr>
 						<td>値段</td>
 						<td>
-							<s:property value="session.buyItem_price"/>
+							<s:property value="session.itemPrice"/>
 								<span>円</span>
 						</td>
 				</tr>

@@ -99,19 +99,18 @@
 			<result name="success">userList.jsp</result>
 		</action>
 
-
 		<!-- BuyItemAction -->
 		<action name="BuyItemAction"
 		class="com.internousdev.ecsite.action.BuyItemAction" method="execute">
-			<result name="success">buyItemConfirm.jsp</result>
-			<result name="error">buyItem.jsp</result>
+			<result name="success">buyItem.jsp</result>
+			<result name="error">buyItemList.jsp</result>
 		</action>
 
 		<!-- BuyItemConfirmAction -->
 		<action name="BuyItemConfirmAction"
 		class="com.internousdev.ecsite.action.BuyItemConfirmAction" method="execute">
-			<result name="success">buyItemComplete.jsp</result>
-			<result name="back">buyItem.jsp</result>
+			<result name="success">buyItemConmplete.jsp</result>
+			<result name="back">buyItemList.jsp</result>
 		</action>
 
 		<!-- MyPageAction -->

@@ -1,7 +1,7 @@
 package com.internousdev.ecsite.dto;
 
 public class UserListDTO {
-	public String id;
+	public String user_id;
 	public String login_id;
 	public String login_pass;
 	public String user_name;
@@ -9,10 +9,10 @@ public class UserListDTO {
 	public String update_date;
 
 	public String getId(){
-		return id;
+		return user_id;
 	}
 	public void setId(String id){
-		this.id=id;
+		this.user_id=id;
 	}
 	public String getLoginId(){
 		return this.login_id;
