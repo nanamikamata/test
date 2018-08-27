@@ -99,6 +99,25 @@
 			<result name="success">userList.jsp</result>
 		</action>
 
+		<!-- AddCartAction -->
+		<action name="CartAction" class="com.internousdev.ecsite.action.CartAction"	method="execute">
+			<result name="success">cart.jsp</result>
+			<result name="error">buyItemList.jsp</result>
+			<result name="input">cart.jsp</result>
+		</action>
+
+		<!-- CartAction -->
+		<action name="CartAction" class="com.internousdev.ecsite.action.CartAction"	method="execute">
+			<result name="success">cart.jsp</result>
+			<result name="error">buyItemList.jsp</result>
+		</action>
+
+		<!-- CartAction -->
+		<action name="CartAction" class="com.internousdev.ecsite.action.CartAction"	method="execute">
+			<result name="success">cart.jsp</result>
+			<result name="error">buyItemList.jsp</result>
+		</action>
+
 		<!-- BuyItemAction -->
 		<action name="BuyItemAction"
 		class="com.internousdev.ecsite.action.BuyItemAction" method="execute">
@@ -106,10 +125,17 @@
 			<result name="error">buyItemList.jsp</result>
 		</action>
 
+		<!-- BuyItem2Action -->
+		<action name="BuyItem2Action"
+		class="com.internousdev.ecsite.action.BuyItem2Action" method="execute">
+			<result name="success">buyItemConfirm.jsp</result>
+			<result name="error">buyItem.jsp</result>
+		</action>
+
 		<!-- BuyItemConfirmAction -->
 		<action name="BuyItemConfirmAction"
 		class="com.internousdev.ecsite.action.BuyItemConfirmAction" method="execute">
-			<result name="success">buyItemConmplete.jsp</result>
+			<result name="success">buyItemComplete.jsp</result>
 			<result name="back">buyItemList.jsp</result>
 		</action>
 

@@ -99,6 +99,7 @@
 			<div id="text-right">
 				<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 				<p>マイページは<a href='<s:url action="MyPageAction"/>'>こちら</a></p>
+				<p>カートは<a href='<s:url action="CartAction"/>'>こちら</a></p>
 			</div>
 	</div>
 	<div id="footer">

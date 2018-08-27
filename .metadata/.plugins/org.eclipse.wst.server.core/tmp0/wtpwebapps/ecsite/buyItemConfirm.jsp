@@ -82,25 +82,25 @@
 			<table>
 				<tr>
 					<td>商品名</td>
-					<td><s:property value="session.itemName"/></td>
+					<td><s:property value="{#session.itemName}"/></td>
 				</tr>
 				<tr>
 						<td>値段</td>
 						<td>
-							<s:property value="session.itemPrice"/>
+							<s:property value="{#session.itemPrice}"/>
 								<span>円</span>
 						</td>
 				</tr>
 				<tr>
 						<td>購入個数</td>
 						<td>
-							<s:property value="session.count"/>
+							<s:property value="{#session.count}"/>
 								<span>個</span>
 						</td>
 				</tr>
 				<tr>
 						<td>支払い方法</td>
-						<td><s:property value="session.pay"/></td>
+						<td><s:property value="{#session.pay}"/></td>
 				</tr>
 				<tr>
 						<td><input type="button" value="戻る"

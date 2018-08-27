@@ -50,6 +50,15 @@ create table login_manager_transaction(
 	updated_date datetime
 );
 
+create table cart_info(
+	id int primary key not null auto_increment,
+	user_id varchar(16) not null,
+	item_id int not null,
+	item_count int not null,
+	item_price int not null,
+	insert_date datetime not null,
+	update_date datetime
+);
 
 
 INSERT INTO item_info_transaction(item_name,item_price,item_stock) VALUES("ノートBook",100,

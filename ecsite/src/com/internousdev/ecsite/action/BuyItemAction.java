@@ -19,8 +19,6 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	private ArrayList<LoginDTO> buyItemListDTO=new ArrayList<LoginDTO>();
 	private Map<String, Object> session;
 	private String message;
-	private int total_count;
-	private String pay;
 
 	public String execute(){
 		String result = ERROR;
@@ -42,23 +40,9 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 		if(!buyItemListDTO.isEmpty() || itemCountList==null) {
 			session.put("buyItemListDTO", buyItemListDTO);
 			result = SUCCESS;
-
 			return result;
 		}
-		session.put("total_count", total_count);
-		int intStock=Integer.parseInt(session.get("total_count").toString());
-		int intPrice=Integer.parseInt(session.get("itemPrice").toString());
-		session.put("total_price", intStock*intPrice);
-		String payment;
 
-		if(pay.equals("1")){
-			payment="現金払い";
-			session.put("pay",payment);
-		}else{
-			payment="クレジットカード";
-			session.put("pay",payment);
-		}
-		return result;
 
 		}catch (SQLException e) {
 			// TODO 自動生成された catch ブロック
@@ -93,17 +77,5 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 		this.message=message;
 	}
 
-	public int getCount(){
-		return total_count;
-	}
-	public void setCount(int total_count){
-		this.total_count=total_count;
-	}
-	public String getPay(){
-		return pay;
-	}
-	public void setPay(String pay){
-		this.pay=pay;
-	}
 
 }

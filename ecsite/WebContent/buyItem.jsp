@@ -67,13 +67,12 @@ table {
 		</div>
 
 		<div>
-
 			<s:if test="buyItemListDTO == null">
 			<h3>商品詳細はありません。</h3>
 		</s:if>
 		<s:elseif test="message == null">
 			<h3>商品詳細</h3>
-		<s:form action="BuyItemConfirmAction">
+		<s:form action="BuyItem2Action">
 		<table>
 		<tr>
 		<th>商品名</th>
@@ -107,13 +106,23 @@ table {
 			<input type="radio" name="pay" value="2">クレジットカード</td>
 		</tr>
 		<tr>
-			<td><s:param name="id" value="%{#session.id}"/>
+			<td>
+				<s:param name="id" value="%{#session.id}"/>
 				<input type="hidden" name="" value="1">
 				<s:submit value="購入" method=""/>
 			</td>
 		</tr>
 
+
+
 		</table>
+
+<div class="submit_btn_box">
+		<s:hidden name="itemId" value="%{#session.itemId}"/>
+		<s:hidden name="itemName" value="%{#session.itemName}"/>
+		<s:hidden name="itemPrice" value="%{#session.itemPrice}"/>
+		<s:submit value="カートに追加" class="submit_btn" />
+		</div>
 
 
 			</s:form>
