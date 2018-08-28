@@ -12,7 +12,6 @@ public class CartInfoDTO {
 		private Date updateDate;
 
 		private String itemName;
-		private String status;
 		private int subtotal;
 
 		public int getId() {
@@ -57,17 +56,11 @@ public class CartInfoDTO {
 		public void setUpdateDate(Date updateDate) {
 			this.updateDate = updateDate;
 		}
-		public String getProductName() {
+		public String getItemName() {
 			return itemName;
 		}
-		public void setProductName(String productName) {
-			this.itemName = productName;
-		}
-		public String getStatus() {
-			return status;
-		}
-		public void setStatus(String status) {
-			this.status = status;
+		public void setItemName(String itemName) {
+			this.itemName = itemName;
 		}
 		public int getSubtotal() {
 			return subtotal;

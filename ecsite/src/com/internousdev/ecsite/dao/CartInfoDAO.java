@@ -26,11 +26,10 @@ public List<CartInfoDTO> getCartInfoDtoList(String login_Id) {
 	+ " pi.insert_date as insert_date,"
 	+ " pi.update_date as update_date,"
 	+ " pi.item_name as item_name,"
-	+ " pi.status as status,"
 	+ " (sum(ci.item_count) * pi.item_price) as subtotal"
 	+ " FROM cart_info as ci"
-	+ " LEFT JOIN item_info as pi"
-	+ " ON ci.item_id = pi.item_id"
+	+ " LEFT JOIN item_info_transaction as pi"
+	+ " ON ci.item_id = pi.id"
 	+ " WHERE ci.user_id = ?"
 	+ " group by item_id";
 	try {
@@ -47,8 +46,7 @@ public List<CartInfoDTO> getCartInfoDtoList(String login_Id) {
 			cartInfoDTO.setItemPrice(resultSet.getInt("item_price"));
 			cartInfoDTO.setInsertDate(resultSet.getDate("insert_date"));
 			cartInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
-			cartInfoDTO.setProductName(resultSet.getString("item_name"));
-			cartInfoDTO.setStatus(resultSet.getString("status"));
+			cartInfoDTO.setItemName(resultSet.getString("item_name"));
 			cartInfoDTO.setSubtotal(resultSet.getInt("subtotal"));
 			cartInfoDtoList.add(cartInfoDTO);
 		}
@@ -91,14 +89,14 @@ public int regist(String userId,  int itemId, String Count, int itemPrice) {
 	Connection connection = dbConnector.getConnection();
 	int count = 0;
 	String sql = "insert into cart_info(user_id, item_id, item_count, item_price, insert_date)"
-			+ " values (?, ?, ?, ?, ?, now())";
+			+ " values (?, ?, ?, ?, now())";
 
 	try {
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setString(1, userId);
-		preparedStatement.setInt(3, itemId);
-		preparedStatement.setString(4, Count);
-		preparedStatement.setInt(5, itemPrice);
+		preparedStatement.setInt(2, itemId);
+		preparedStatement.setString(3, Count);
+		preparedStatement.setInt(4, itemPrice);
 
 		count = preparedStatement.executeUpdate();
 	} catch (SQLException e) {
@@ -144,6 +142,32 @@ public int deleteAll(String userId) {
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setString(1, userId);
 
+		count = preparedStatement.executeUpdate();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	try {
+		connection.close();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return count;
+}
+
+public boolean isExistsCartInfo() {
+
+	return false;
+}
+
+public int linkToLoginId(String loginId) {
+	DBConnector dbConnector = new DBConnector();
+	Connection connection = dbConnector.getConnection();
+	int count = 0;
+	String sql = "update cart_info set user_id=?";
+
+	try {
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setString(1, loginId);
 		count = preparedStatement.executeUpdate();
 	} catch (SQLException e) {
 		e.printStackTrace();

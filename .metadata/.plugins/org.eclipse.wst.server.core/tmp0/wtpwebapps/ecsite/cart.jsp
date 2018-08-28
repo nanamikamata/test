@@ -82,7 +82,7 @@
 </s:if>
 
 <s:if test="#session.cartInfoDtoList.size()>0">
-<s:form id="form" action="SettlementConfirmAction">
+<s:form id="form" action="BuyItemConfirmAction">
 <table class="horizontal-list-table">
 <thead>
 <tr>
@@ -98,7 +98,7 @@
 <tr>
 	<td><s:checkbox name="checkList" value="checked" fieldValue="%{id}"/></td>
 	<s:hidden name="id" value="%{id}"/>
-	<td><s:property value="itemName"/></td>
+	<td><s:property value="session.itemName"/></td>
 	<td><s:property value="itemPrice"/>円</td>
 	<td><s:property value="itemCount"/></td>
 	<td><s:property value="subtotal"/>円</td>
