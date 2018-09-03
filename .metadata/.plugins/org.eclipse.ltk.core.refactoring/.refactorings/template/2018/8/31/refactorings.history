@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;userCreate.jsp&apos; to &apos;login.jsp&apos;&#x0D;&#x0A;- 元のプロジェクト: &apos;template&apos;&#x0D;&#x0A;- 宛先要素: &apos;login.jsp&apos;&#x0D;&#x0A;- オリジナル要素: &apos;userCreate.jsp&apos;&#x0D;&#x0A;- リファクタリングされた要素の参照を更新" description="ファイルを移動する" element1="WebContent/WEB-INF/userCreate.jsp" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1533281024341" target="WebContent/login.jsp" units="0" version="1.0"/>
-</session>
