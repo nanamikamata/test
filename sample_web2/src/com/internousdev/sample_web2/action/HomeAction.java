@@ -1,6 +1,8 @@
 package com.internousdev.sample_web2.action;
 
-import
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class HomeAction extends ActionSupport implements SessionAware{
 	private List<MCategoryDTO> mCategoryDtoList=new ArrayList<MCategoryDTO>()
